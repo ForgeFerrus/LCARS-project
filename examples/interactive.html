@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LCARS Framework - Interactive Demo</title>
+    <link rel="stylesheet" href="../css/lcars.css">
+</head>
+<body>
+    <div class="lcars-container">
+        <!-- Header with Stardate -->
+        <div class="lcars-row">
+            <div class="lcars-corner top-left orange"></div>
+            <div class="lcars-panel orange text-center flex-3">
+                <h1 class="lcars-title" style="color: black; margin: 0;">USS Enterprise - NCC-1701-D</h1>
+            </div>
+            <div class="lcars-panel purple text-center flex-2">
+                <h2 class="lcars-subtitle" style="color: black; margin: 0;" id="stardate">Stardate: Loading...</h2>
+            </div>
+            <div class="lcars-corner top-right orange"></div>
+        </div>
+        
+        <!-- Status Bars -->
+        <div class="lcars-row">
+            <div class="lcars-bar orange small"></div>
+            <div class="lcars-bar purple small"></div>
+            <div class="lcars-bar blue small"></div>
+            <div class="lcars-bar sky small"></div>
+        </div>
+        
+        <!-- Main Console -->
+        <div class="lcars-row">
+            <div class="lcars-panel text flex-2">
+                <h2 class="lcars-subtitle">Main Computer Interface</h2>
+                <p class="lcars-text">
+                    This is an interactive demonstration of the LCARS Framework with JavaScript enhancements.
+                    The framework includes features such as color schemes, layout components, animations, 
+                    and optional JavaScript utilities.
+                </p>
+                <p class="lcars-text mt-10">
+                    Click the buttons below to test various interactive features.
+                </p>
+            </div>
+            
+            <div class="lcars-panel blue flex-1 text-center">
+                <h3 style="color: black;">System Status</h3>
+                <div class="lcars-bar orange blink mt-10" id="status-indicator"></div>
+                <p class="mt-10" style="color: black; font-weight: bold;">OPERATIONAL</p>
+            </div>
+        </div>
+        
+        <!-- Control Panels -->
+        <div class="lcars-row">
+            <div class="lcars-panel orange text-center">
+                <h3 style="color: black;">Propulsion</h3>
+                <button class="lcars-button blue mt-10" onclick="LCARS.notify('Warp Drive Engaged', 'blue')">
+                    Engage Warp
+                </button>
+            </div>
+            
+            <div class="lcars-panel purple text-center">
+                <h3 style="color: black;">Shields</h3>
+                <button class="lcars-button red mt-10" onclick="LCARS.notify('Shields Raised', 'red')">
+                    Raise Shields
+                </button>
+            </div>
+            
+            <div class="lcars-panel sky text-center">
+                <h3 style="color: black;">Communications</h3>
+                <button class="lcars-button orange mt-10" onclick="LCARS.notify('Hailing Frequencies Open', 'orange')">
+                    Open Channel
+                </button>
+            </div>
+            
+            <div class="lcars-panel peach text-center">
+                <h3 style="color: black;">Sensors</h3>
+                <button class="lcars-button purple mt-10" onclick="LCARS.notify('Long Range Scan Initiated', 'purple')">
+                    Scan Sector
+                </button>
+            </div>
+        </div>
+        
+        <!-- Systems List -->
+        <div class="lcars-row">
+            <div class="lcars-panel text">
+                <h3 class="lcars-subtitle">Active Systems</h3>
+                <ul class="lcars-list">
+                    <li>Life Support: ACTIVE</li>
+                    <li>Navigation: ACTIVE</li>
+                    <li>Deflector Shields: STANDBY</li>
+                    <li>Impulse Engines: ACTIVE</li>
+                    <li>Warp Drive: STANDBY</li>
+                    <li>Transporters: ACTIVE</li>
+                    <li>Tactical Systems: READY</li>
+                    <li>Science Sensors: ACTIVE</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Color Demonstration -->
+        <div class="lcars-row">
+            <div class="lcars-bar orange"></div>
+            <div class="lcars-bar red"></div>
+            <div class="lcars-bar purple"></div>
+            <div class="lcars-bar blue"></div>
+            <div class="lcars-bar yellow"></div>
+            <div class="lcars-bar tan"></div>
+            <div class="lcars-bar peach"></div>
+            <div class="lcars-bar sky"></div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="lcars-row">
+            <div class="lcars-corner bottom-left orange"></div>
+            <div class="lcars-panel orange text-center flex-1">
+                <p style="color: black; font-weight: bold; margin: 0;">
+                    LCARS Framework v1.0 - Starfleet Command
+                </p>
+            </div>
+            <div class="lcars-corner bottom-right orange"></div>
+        </div>
+    </div>
+    
+    <script src="../js/lcars.js"></script>
+    <script>
+        // Start the stardate clock when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            LCARS.startStardateClock('stardate');
+        });
+    </script>
+</body>
+</html>
