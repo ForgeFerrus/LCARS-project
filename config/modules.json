@@ -1,0 +1,28 @@
+{
+  "modules": [
+    {
+      "id": "editor",
+      "name": "EDITOR",
+      "description": "Text and Code Editor",
+      "enabled": true
+    },
+    {
+      "id": "ai",
+      "name": "AI",
+      "description": "AI Assistant (OpenAI Integration)",
+      "enabled": true
+    },
+    {
+      "id": "filesystem",
+      "name": "FILESYSTEM",
+      "description": "File Management System",
+      "enabled": true
+    },
+    {
+      "id": "console",
+      "name": "CONSOLE",
+      "description": "System Console",
+      "enabled": true
+    }
+  ]
+}

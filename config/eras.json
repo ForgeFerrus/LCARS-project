@@ -1,0 +1,88 @@
+{
+  "eras": {
+    "22nd": {
+      "name": "22nd Century (ENT Era)",
+      "colors": {
+        "primary": "#FF9900",
+        "secondary": "#CC6600",
+        "accent": "#FFCC66",
+        "background": "#000000",
+        "text": "#FFCC99",
+        "button": "#CC7722",
+        "button_active": "#FF9933"
+      }
+    },
+    "23rd": {
+      "name": "23rd Century Early (TOS Era)",
+      "colors": {
+        "primary": "#FF6666",
+        "secondary": "#CC3333",
+        "accent": "#FF9999",
+        "background": "#000000",
+        "text": "#FFCCCC",
+        "button": "#CC5555",
+        "button_active": "#FF7777"
+      }
+    },
+    "23st": {
+      "name": "23rd Century Late (TMP Era)",
+      "colors": {
+        "primary": "#9999FF",
+        "secondary": "#6666CC",
+        "accent": "#CCCCFF",
+        "background": "#000000",
+        "text": "#CCCCFF",
+        "button": "#7777CC",
+        "button_active": "#9999FF"
+      }
+    },
+    "24th": {
+      "name": "24th Century Early (TNG Era)",
+      "colors": {
+        "primary": "#FF9966",
+        "secondary": "#CC6633",
+        "accent": "#FFCC99",
+        "background": "#000000",
+        "text": "#FFCC99",
+        "button": "#CC7744",
+        "button_active": "#FF9955"
+      }
+    },
+    "24st": {
+      "name": "24th Century Late (VOY/DS9 Era)",
+      "colors": {
+        "primary": "#CC99FF",
+        "secondary": "#9966CC",
+        "accent": "#DDBBFF",
+        "background": "#000000",
+        "text": "#EEDDFF",
+        "button": "#AA77DD",
+        "button_active": "#CC99FF"
+      }
+    },
+    "25th": {
+      "name": "25th Century (Picard Era)",
+      "colors": {
+        "primary": "#6699FF",
+        "secondary": "#3366CC",
+        "accent": "#99CCFF",
+        "background": "#000000",
+        "text": "#CCDDFF",
+        "button": "#5588DD",
+        "button_active": "#7799FF"
+      }
+    },
+    "29th": {
+      "name": "29th Century (Future)",
+      "colors": {
+        "primary": "#00FFFF",
+        "secondary": "#00CCCC",
+        "accent": "#66FFFF",
+        "background": "#000000",
+        "text": "#CCFFFF",
+        "button": "#00DDDD",
+        "button_active": "#33FFFF"
+      }
+    }
+  }
+}
