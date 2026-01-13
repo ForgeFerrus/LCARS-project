@@ -81,11 +81,13 @@ const LCARS = {
 
   /**
    * Get current timestamp in LCARS format (Stardate)
+   * Uses a base year of 2000 for simplified stardate calculation
    * @returns {string} Formatted stardate
    */
   getStardate: function() {
     const now = new Date();
-    const year = now.getFullYear() - 2000;
+    const baseYear = 2000; // Stardate epoch base year
+    const year = now.getFullYear() - baseYear;
     const dayOfYear = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / 86400000);
     const fraction = (now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds()) / 86400;
     
@@ -106,12 +108,14 @@ const LCARS = {
   /**
    * Start a stardate clock that updates every second
    * @param {string} elementId - ID of element to update
+   * @returns {number} Interval ID that can be used to stop the clock with clearInterval()
    */
   startStardateClock: function(elementId) {
     this.updateStardate(elementId);
-    setInterval(() => {
+    const intervalId = setInterval(() => {
       this.updateStardate(elementId);
     }, 1000);
+    return intervalId;
   }
 };
 
