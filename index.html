@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LCARS Development Environment</title>
+    <title>Середовище розробки LCARS</title>
     <link rel="stylesheet" href="styles/lcars.css">
     <link rel="stylesheet" href="styles/main.css">
 </head>
@@ -13,15 +13,15 @@
         <header class="lcars-header">
             <div class="lcars-elbow-left"></div>
             <div class="lcars-bar">
-                <span class="lcars-title">LCARS DEVELOPMENT ENVIRONMENT</span>
-                <span class="lcars-subtitle">MINI OS v1.0</span>
+                <span class="lcars-title">СЕРЕДОВИЩЕ РОЗРОБКИ LCARS</span>
+                <span class="lcars-subtitle">МІНІ ОС v1.0</span>
             </div>
             <div class="lcars-button-group">
-                <button class="lcars-button orange" data-action="terminal">TERMINAL</button>
-                <button class="lcars-button blue" data-action="files">FILES</button>
-                <button class="lcars-button violet" data-action="apps">APPS</button>
-                <button class="lcars-button peach" data-action="ai-agent">AI AGENT</button>
-                <button class="lcars-button orange" data-action="system">SYSTEM</button>
+                <button class="lcars-button orange" data-action="terminal">ТЕРМІНАЛ</button>
+                <button class="lcars-button blue" data-action="files">ФАЙЛИ</button>
+                <button class="lcars-button violet" data-action="apps">ПРОГРАМИ</button>
+                <button class="lcars-button peach" data-action="ai-agent">AI АГЕНТ</button>
+                <button class="lcars-button orange" data-action="system">СИСТЕМА</button>
             </div>
         </header>
 
@@ -32,19 +32,19 @@
                 <div class="lcars-bracket-left"></div>
                 <div class="lcars-status-panel">
                     <div class="status-item">
-                        <span class="status-label">SYSTEM STATUS</span>
-                        <span class="status-value online">ONLINE</span>
+                        <span class="status-label">СТАТУС СИСТЕМИ</span>
+                        <span class="status-value online">В МЕРЕЖІ</span>
                     </div>
                     <div class="status-item">
-                        <span class="status-label">AI AGENT</span>
-                        <span class="status-value active">ACTIVE</span>
+                        <span class="status-label">AI АГЕНТ</span>
+                        <span class="status-value active">АКТИВНИЙ</span>
                     </div>
                     <div class="status-item">
-                        <span class="status-label">PROCESSES</span>
+                        <span class="status-label">ПРОЦЕСИ</span>
                         <span class="status-value">3</span>
                     </div>
                     <div class="status-item">
-                        <span class="status-label">UPTIME</span>
+                        <span class="status-label">ЧАС РОБОТИ</span>
                         <span class="status-value" id="uptime">00:00:00</span>
                     </div>
                 </div>
@@ -54,24 +54,24 @@
             <section class="lcars-content">
                 <!-- Welcome Panel -->
                 <div id="welcome-panel" class="content-panel active">
-                    <h2 class="panel-title">WELCOME TO LCARS DEVELOPMENT ENVIRONMENT</h2>
+                    <h2 class="panel-title">ЛАСКАВО ПРОСИМО ДО СЕРЕДОВИЩА РОЗРОБКИ LCARS</h2>
                     <div class="panel-body">
-                        <p>A mini operating system interface in LCARS style with integrated AI agent capabilities.</p>
-                        <h3>FEATURES:</h3>
+                        <p>Інтерфейс міні-операційної системи у стилі LCARS з інтегрованими можливостями AI агента.</p>
+                        <h3>МОЖЛИВОСТІ:</h3>
                         <ul>
-                            <li>Interactive Terminal Console</li>
-                            <li>Virtual File System</li>
-                            <li>Application Launcher</li>
-                            <li>AI Agent for Interface Building</li>
-                            <li>System Monitoring and Maintenance</li>
+                            <li>Інтерактивна термінальна консоль</li>
+                            <li>Віртуальна файлова система</li>
+                            <li>Запускач програм</li>
+                            <li>AI агент для побудови інтерфейсів</li>
+                            <li>Моніторинг та обслуговування системи</li>
                         </ul>
-                        <p>Select a module from the header to begin.</p>
+                        <p>Виберіть модуль у заголовку для початку.</p>
                     </div>
                 </div>
 
                 <!-- Terminal Panel -->
                 <div id="terminal-panel" class="content-panel">
-                    <h2 class="panel-title">TERMINAL CONSOLE</h2>
+                    <h2 class="panel-title">ТЕРМІНАЛЬНА КОНСОЛЬ</h2>
                     <div class="terminal">
                         <div id="terminal-output"></div>
                         <div class="terminal-input-line">
@@ -83,7 +83,7 @@
 
                 <!-- Files Panel -->
                 <div id="files-panel" class="content-panel">
-                    <h2 class="panel-title">FILE SYSTEM</h2>
+                    <h2 class="panel-title">ФАЙЛОВА СИСТЕМА</h2>
                     <div class="panel-body">
                         <div id="file-tree"></div>
                     </div>
@@ -91,7 +91,7 @@
 
                 <!-- Apps Panel -->
                 <div id="apps-panel" class="content-panel">
-                    <h2 class="panel-title">APPLICATION LAUNCHER</h2>
+                    <h2 class="panel-title">ЗАПУСКАЧ ПРОГРАМ</h2>
                     <div class="panel-body">
                         <div class="app-grid" id="app-grid"></div>
                     </div>
@@ -99,20 +99,20 @@
 
                 <!-- AI Agent Panel -->
                 <div id="ai-agent-panel" class="content-panel">
-                    <h2 class="panel-title">AI AGENT CONTROL</h2>
+                    <h2 class="panel-title">УПРАВЛІННЯ AI АГЕНТОМ</h2>
                     <div class="panel-body">
                         <div class="ai-chat" id="ai-chat"></div>
                         <div class="ai-input-container">
-                            <input type="text" id="ai-input" class="ai-input" placeholder="Enter AI command...">
-                            <button class="lcars-button blue" id="ai-send">SEND</button>
+                            <input type="text" id="ai-input" class="ai-input" placeholder="Введіть команду AI...">
+                            <button class="lcars-button blue" id="ai-send">НАДІСЛАТИ</button>
                         </div>
                         <div class="ai-capabilities">
-                            <h3>AI AGENT CAPABILITIES:</h3>
+                            <h3>МОЖЛИВОСТІ AI АГЕНТА:</h3>
                             <ul>
-                                <li>BUILD INTERFACE - Create new UI components</li>
-                                <li>UPDATE SYSTEM - Modify existing features</li>
-                                <li>MAINTAIN - System diagnostics and optimization</li>
-                                <li>ASSIST - Answer questions and provide guidance</li>
+                                <li>ПОБУДОВА ІНТЕРФЕЙСУ - Створення нових компонентів UI</li>
+                                <li>ОНОВЛЕННЯ СИСТЕМИ - Модифікація існуючих функцій</li>
+                                <li>ОБСЛУГОВУВАННЯ - Діагностика та оптимізація системи</li>
+                                <li>ДОПОМОГА - Відповіді на питання та надання порад</li>
                             </ul>
                         </div>
                     </div>
@@ -120,7 +120,7 @@
 
                 <!-- System Panel -->
                 <div id="system-panel" class="content-panel">
-                    <h2 class="panel-title">SYSTEM INFORMATION</h2>
+                    <h2 class="panel-title">СИСТЕМНА ІНФОРМАЦІЯ</h2>
                     <div class="panel-body">
                         <div class="system-info" id="system-info"></div>
                     </div>
@@ -142,6 +142,7 @@
         </footer>
     </div>
 
+    <script src="js/i18n-uk.js"></script>
     <script src="js/lcars-os.js"></script>
     <script src="js/terminal.js"></script>
     <script src="js/filesystem.js"></script>

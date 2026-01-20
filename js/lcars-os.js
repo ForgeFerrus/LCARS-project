@@ -23,7 +23,7 @@ class LCARSOS {
         const year = now.getFullYear();
         const dayOfYear = Math.floor((now - new Date(year, 0, 0)) / 1000 / 60 / 60 / 24);
         const stardate = ((year - 2000) * 1000) + dayOfYear + (now.getHours() / 24);
-        document.getElementById('stardate').textContent = `STARDATE: ${stardate.toFixed(2)}`;
+        document.getElementById('stardate').textContent = `ЗОРЯНА ДАТА: ${stardate.toFixed(2)}`;
     }
 
     updateUptime() {

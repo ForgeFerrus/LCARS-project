@@ -8,18 +8,31 @@ class Terminal {
         this.currentPath = '/home/user';
         
         this.commands = {
+            допомога: () => this.showHelp(),
             help: () => this.showHelp(),
+            очистити: () => this.clear(),
             clear: () => this.clear(),
+            список: () => this.listFiles(),
             ls: () => this.listFiles(),
+            шлях: () => this.printWorkingDirectory(),
             pwd: () => this.printWorkingDirectory(),
+            зд: (args) => this.changeDirectory(args),
             cd: (args) => this.changeDirectory(args),
+            ехо: (args) => this.echo(args),
             echo: (args) => this.echo(args),
+            дата: () => this.showDate(),
             date: () => this.showDate(),
+            хто: () => this.whoami(),
             whoami: () => this.whoami(),
+            система: () => this.systemInfo(),
             system: () => this.systemInfo(),
+            процеси: () => this.showProcesses(),
             processes: () => this.showProcesses(),
+            'ai-побудувати': (args) => this.aiBuild(args),
             'ai-build': (args) => this.aiBuild(args),
+            'ai-оновити': (args) => this.aiUpdate(args),
             'ai-update': (args) => this.aiUpdate(args),
+            'ai-обслужити': () => this.aiMaintain(),
             'ai-maintain': () => this.aiMaintain()
         };
         
@@ -39,7 +52,7 @@ class Terminal {
             }
         });
         
-        this.writeLine('LCARS Terminal v1.0 - Type "help" for available commands', 'info');
+        this.writeLine('Термінал LCARS v1.0 - Введіть "допомога" для доступних команд', 'info');
     }
 
     executeCommand() {
@@ -56,8 +69,8 @@ class Terminal {
         if (command) {
             command(args.join(' '));
         } else {
-            this.writeLine(`Command not found: ${cmd}`, 'error');
-            this.writeLine('Type "help" for available commands', 'info');
+            this.writeLine(`Команду не знайдено: ${cmd}`, 'error');
+            this.writeLine('Введіть "допомога" для доступних команд', 'info');
         }
         
         this.input.value = '';
@@ -87,26 +100,26 @@ class Terminal {
     }
 
     showHelp() {
-        this.writeLine('Available commands:', 'info');
-        this.writeLine('  help          - Show this help message');
-        this.writeLine('  clear         - Clear terminal screen');
-        this.writeLine('  ls            - List files in current directory');
-        this.writeLine('  pwd           - Print working directory');
-        this.writeLine('  cd [dir]      - Change directory');
-        this.writeLine('  echo [text]   - Print text to terminal');
-        this.writeLine('  date          - Show current date and time');
-        this.writeLine('  whoami        - Show current user');
-        this.writeLine('  system        - Show system information');
-        this.writeLine('  processes     - Show running processes');
-        this.writeLine('  ai-build      - Use AI to build interface components');
-        this.writeLine('  ai-update     - Use AI to update system');
-        this.writeLine('  ai-maintain   - Run AI system maintenance');
+        this.writeLine('Доступні команди:', 'info');
+        this.writeLine('  допомога       - Показати це повідомлення');
+        this.writeLine('  очистити       - Очистити екран терміналу');
+        this.writeLine('  список         - Показати файли в поточній директорії');
+        this.writeLine('  шлях           - Показати поточну директорію');
+        this.writeLine('  зд [дир]       - Змінити директорію');
+        this.writeLine('  ехо [текст]    - Вивести текст у термінал');
+        this.writeLine('  дата           - Показати поточну дату та час');
+        this.writeLine('  хто            - Показати поточного користувача');
+        this.writeLine('  система        - Показати системну інформацію');
+        this.writeLine('  процеси        - Показати запущені процеси');
+        this.writeLine('  ai-побудувати  - Використати AI для побудови компонентів інтерфейсу');
+        this.writeLine('  ai-оновити     - Використати AI для оновлення системи');
+        this.writeLine('  ai-обслужити   - Запустити обслуговування системи AI');
     }
 
     listFiles() {
         const files = window.filesystem ? window.filesystem.getCurrentFiles() : [];
         if (files.length === 0) {
-            this.writeLine('Directory is empty');
+            this.writeLine('Директорія порожня');
         } else {
             files.forEach(file => {
                 const icon = file.type === 'folder' ? '📁' : '📄';
@@ -122,15 +135,15 @@ class Terminal {
     changeDirectory(path) {
         if (!path) {
             this.currentPath = '/home/user';
-            this.writeLine(`Changed to ${this.currentPath}`, 'success');
+            this.writeLine(`Змінено на ${this.currentPath}`, 'success');
         } else if (path === '..') {
             const parts = this.currentPath.split('/').filter(p => p);
             parts.pop();
             this.currentPath = '/' + parts.join('/');
-            this.writeLine(`Changed to ${this.currentPath}`, 'success');
+            this.writeLine(`Змінено на ${this.currentPath}`, 'success');
         } else {
             this.currentPath = path.startsWith('/') ? path : `${this.currentPath}/${path}`;
-            this.writeLine(`Changed to ${this.currentPath}`, 'success');
+            this.writeLine(`Змінено на ${this.currentPath}`, 'success');
         }
     }
 
@@ -143,26 +156,26 @@ class Terminal {
     }
 
     whoami() {
-        this.writeLine('lcars-user');
+        this.writeLine('користувач-lcars');
     }
 
     systemInfo() {
         const info = window.lcarsos.getSystemInfo();
-        this.writeLine('=== SYSTEM INFORMATION ===', 'info');
-        this.writeLine(`Version: ${info.version}`);
-        this.writeLine(`Platform: ${info.platform}`);
-        this.writeLine(`Processes: ${info.processes}`);
-        this.writeLine(`CPU: ${info.cpu.model} (${info.cpu.cores} cores)`);
-        this.writeLine(`Memory: ${info.memory.used} / ${info.memory.total}`);
-        this.writeLine(`Network: ${info.network.status} (${info.network.speed})`);
+        this.writeLine('=== СИСТЕМНА ІНФОРМАЦІЯ ===', 'info');
+        this.writeLine(`Версія: ${info.version}`);
+        this.writeLine(`Платформа: ${info.platform}`);
+        this.writeLine(`Процеси: ${info.processes}`);
+        this.writeLine(`ЦП: Квантовий процесор (${info.cpu.cores} ядер)`);
+        this.writeLine(`Пам'ять: ${info.memory.used} / ${info.memory.total}`);
+        this.writeLine(`Мережа: Підключено (${info.network.speed})`);
     }
 
     showProcesses() {
         const processes = window.lcarsos.processes;
         if (processes.length === 0) {
-            this.writeLine('No processes running');
+            this.writeLine('Немає запущених процесів');
         } else {
-            this.writeLine('PID    NAME', 'info');
+            this.writeLine('PID    НАЗВА', 'info');
             processes.forEach(proc => {
                 this.writeLine(`${proc.pid}   ${proc.name}`);
             });
@@ -171,43 +184,43 @@ class Terminal {
 
     aiBuild(component) {
         if (!component) {
-            this.writeLine('Usage: ai-build [component-name]', 'error');
+            this.writeLine('Використання: ai-побудувати [назва-компонента]', 'error');
             return;
         }
-        this.writeLine(`AI Agent: Building ${component}...`, 'info');
+        this.writeLine(`AI Агент: Побудова ${component}...`, 'info');
         setTimeout(() => {
-            this.writeLine(`AI Agent: Successfully created ${component} interface`, 'success');
-            this.writeLine(`AI Agent: Component registered in application launcher`, 'success');
+            this.writeLine(`AI Агент: Успішно створено інтерфейс ${component}`, 'success');
+            this.writeLine(`AI Агент: Компонент зареєстровано у запускачі програм`, 'success');
         }, 1500);
     }
 
     aiUpdate(feature) {
         if (!feature) {
-            this.writeLine('Usage: ai-update [feature-name]', 'error');
+            this.writeLine('Використання: ai-оновити [назва-функції]', 'error');
             return;
         }
-        this.writeLine(`AI Agent: Updating ${feature}...`, 'info');
+        this.writeLine(`AI Агент: Оновлення ${feature}...`, 'info');
         setTimeout(() => {
-            this.writeLine(`AI Agent: Successfully updated ${feature}`, 'success');
-            this.writeLine(`AI Agent: System reinitialized`, 'success');
+            this.writeLine(`AI Агент: Успішно оновлено ${feature}`, 'success');
+            this.writeLine(`AI Агент: Система переініціалізована`, 'success');
         }, 1500);
     }
 
     aiMaintain() {
-        this.writeLine('AI Agent: Running system maintenance...', 'info');
+        this.writeLine('AI Агент: Запуск обслуговування системи...', 'info');
         const tasks = [
-            'Scanning file system integrity',
-            'Optimizing memory allocation',
-            'Checking for updates',
-            'Verifying security protocols',
-            'Cleaning temporary files'
+            'Сканування цілісності файлової системи',
+            'Оптимізація розподілу пам\'яті',
+            'Перевірка оновлень',
+            'Перевірка протоколів безпеки',
+            'Очищення тимчасових файлів'
         ];
         
         tasks.forEach((task, index) => {
             setTimeout(() => {
-                this.writeLine(`AI Agent: ${task}... OK`, 'success');
+                this.writeLine(`AI Агент: ${task}... ОК`, 'success');
                 if (index === tasks.length - 1) {
-                    this.writeLine('AI Agent: Maintenance completed successfully', 'success');
+                    this.writeLine('AI Агент: Обслуговування успішно завершено', 'success');
                 }
             }, (index + 1) * 800);
         });

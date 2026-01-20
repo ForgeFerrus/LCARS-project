@@ -79,65 +79,65 @@ class LCARSApp {
         
         systemInfoEl.innerHTML = `
             <div class="info-card">
-                <h3>SYSTEM INFORMATION</h3>
+                <h3>СИСТЕМНА ІНФОРМАЦІЯ</h3>
                 <div class="info-row">
-                    <span class="info-label">Version:</span>
+                    <span class="info-label">Версія:</span>
                     <span class="info-value">${info.version}</span>
                 </div>
                 <div class="info-row">
-                    <span class="info-label">Platform:</span>
+                    <span class="info-label">Платформа:</span>
                     <span class="info-value">${info.platform}</span>
                 </div>
                 <div class="info-row">
-                    <span class="info-label">Active Processes:</span>
+                    <span class="info-label">Активні процеси:</span>
                     <span class="info-value">${info.processes}</span>
                 </div>
             </div>
             
             <div class="info-card">
-                <h3>CPU INFORMATION</h3>
+                <h3>ІНФОРМАЦІЯ ПРО ЦП</h3>
                 <div class="info-row">
-                    <span class="info-label">Model:</span>
-                    <span class="info-value">${info.cpu.model}</span>
+                    <span class="info-label">Модель:</span>
+                    <span class="info-value">Квантовий процесор</span>
                 </div>
                 <div class="info-row">
-                    <span class="info-label">Cores:</span>
+                    <span class="info-label">Ядра:</span>
                     <span class="info-value">${info.cpu.cores}</span>
                 </div>
                 <div class="info-row">
-                    <span class="info-label">Usage:</span>
+                    <span class="info-label">Використання:</span>
                     <span class="info-value">${info.cpu.usage}%</span>
                 </div>
             </div>
             
             <div class="info-card">
-                <h3>MEMORY</h3>
+                <h3>ПАМ'ЯТЬ</h3>
                 <div class="info-row">
-                    <span class="info-label">Total:</span>
+                    <span class="info-label">Всього:</span>
                     <span class="info-value">${info.memory.total}</span>
                 </div>
                 <div class="info-row">
-                    <span class="info-label">Used:</span>
+                    <span class="info-label">Використано:</span>
                     <span class="info-value">${info.memory.used}</span>
                 </div>
                 <div class="info-row">
-                    <span class="info-label">Available:</span>
+                    <span class="info-label">Доступно:</span>
                     <span class="info-value">${info.memory.available}</span>
                 </div>
             </div>
             
             <div class="info-card">
-                <h3>NETWORK</h3>
+                <h3>МЕРЕЖА</h3>
                 <div class="info-row">
-                    <span class="info-label">Status:</span>
-                    <span class="info-value">${info.network.status}</span>
+                    <span class="info-label">Статус:</span>
+                    <span class="info-value">Підключено</span>
                 </div>
                 <div class="info-row">
-                    <span class="info-label">Interface:</span>
-                    <span class="info-value">${info.network.interface}</span>
+                    <span class="info-label">Інтерфейс:</span>
+                    <span class="info-value">Підпросторовий мережевий адаптер</span>
                 </div>
                 <div class="info-row">
-                    <span class="info-label">Speed:</span>
+                    <span class="info-label">Швидкість:</span>
                     <span class="info-value">${info.network.speed}</span>
                 </div>
             </div>

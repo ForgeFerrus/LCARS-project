@@ -4,44 +4,44 @@ class AppLauncher {
         this.apps = [
             {
                 id: 'calculator',
-                name: 'Calculator',
+                name: 'Калькулятор',
                 icon: '🔢',
-                description: 'Scientific calculator',
+                description: 'Науковий калькулятор',
                 action: () => this.launchCalculator()
             },
             {
                 id: 'text-editor',
-                name: 'Text Editor',
+                name: 'Текстовий редактор',
                 icon: '📝',
-                description: 'LCARS text editor',
+                description: 'Текстовий редактор LCARS',
                 action: () => this.launchTextEditor()
             },
             {
                 id: 'diagnostics',
-                name: 'Diagnostics',
+                name: 'Діагностика',
                 icon: '🔧',
-                description: 'System diagnostics tool',
+                description: 'Інструмент системної діагностики',
                 action: () => this.launchDiagnostics()
             },
             {
                 id: 'network',
-                name: 'Network',
+                name: 'Мережа',
                 icon: '🌐',
-                description: 'Network monitoring',
+                description: 'Моніторинг мережі',
                 action: () => this.launchNetwork()
             },
             {
                 id: 'data-analyzer',
-                name: 'Data Analyzer',
+                name: 'Аналізатор даних',
                 icon: '📊',
-                description: 'Data analysis tools',
+                description: 'Інструменти аналізу даних',
                 action: () => this.launchDataAnalyzer()
             },
             {
                 id: 'interface-builder',
-                name: 'Interface Builder',
+                name: 'Конструктор інтерфейсів',
                 icon: '🎨',
-                description: 'Build custom interfaces with AI',
+                description: 'Створення власних інтерфейсів з AI',
                 action: () => this.launchInterfaceBuilder()
             }
         ];
@@ -69,46 +69,46 @@ class AppLauncher {
 
     launchCalculator() {
         if (window.terminal) {
-            window.terminal.writeLine('Launching Calculator...', 'info');
-            window.terminal.writeLine('Calculator interface loaded', 'success');
+            window.terminal.writeLine('Запуск Калькулятор...', 'info');
+            window.terminal.writeLine('Інтерфейс калькулятора завантажено', 'success');
         }
     }
 
     launchTextEditor() {
         if (window.terminal) {
-            window.terminal.writeLine('Launching Text Editor...', 'info');
-            window.terminal.writeLine('Text Editor ready', 'success');
+            window.terminal.writeLine('Запуск Текстовий редактор...', 'info');
+            window.terminal.writeLine('Текстовий редактор готовий', 'success');
         }
     }
 
     launchDiagnostics() {
         if (window.terminal) {
-            window.terminal.writeLine('Running system diagnostics...', 'info');
+            window.terminal.writeLine('Запуск системної діагностики...', 'info');
             setTimeout(() => {
-                window.terminal.writeLine('All systems nominal', 'success');
+                window.terminal.writeLine('Всі системи в нормі', 'success');
             }, 1000);
         }
     }
 
     launchNetwork() {
         if (window.terminal) {
-            window.terminal.writeLine('Network Monitor activated', 'info');
-            window.terminal.writeLine('Subspace connection: ACTIVE', 'success');
-            window.terminal.writeLine('Bandwidth: 10 Gbps', 'success');
+            window.terminal.writeLine('Монітор мережі активовано', 'info');
+            window.terminal.writeLine('Підпросторове з\'єднання: АКТИВНЕ', 'success');
+            window.terminal.writeLine('Пропускна здатність: 10 Гбіт/с', 'success');
         }
     }
 
     launchDataAnalyzer() {
         if (window.terminal) {
-            window.terminal.writeLine('Data Analyzer initialized', 'info');
-            window.terminal.writeLine('Ready to process data streams', 'success');
+            window.terminal.writeLine('Аналізатор даних ініціалізовано', 'info');
+            window.terminal.writeLine('Готовий обробляти потоки даних', 'success');
         }
     }
 
     launchInterfaceBuilder() {
         if (window.terminal) {
-            window.terminal.writeLine('AI Interface Builder activated', 'info');
-            window.terminal.writeLine('AI Agent standing by for instructions', 'success');
+            window.terminal.writeLine('Конструктор інтерфейсів AI активовано', 'info');
+            window.terminal.writeLine('AI Агент очікує інструкцій', 'success');
         }
         // Switch to AI Agent panel
         document.querySelector('[data-action="ai-agent"]').click();
@@ -119,10 +119,10 @@ class AppLauncher {
             id: app.id || `app-${Date.now()}`,
             name: app.name,
             icon: app.icon || '📱',
-            description: app.description || 'Custom application',
+            description: app.description || 'Власна програма',
             action: app.action || (() => {
                 if (window.terminal) {
-                    window.terminal.writeLine(`Launching ${app.name}...`, 'info');
+                    window.terminal.writeLine(`Запуск ${app.name}...`, 'info');
                 }
             })
         });
