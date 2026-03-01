@@ -175,6 +175,17 @@ class AIAssistantModule:
         if not message:
             return
         
+        normalized_message = " ".join(message.lower().split()).rstrip("?.!")
+        if not self.client and normalized_message == "ви вже завершили проект":
+            self.input_text.delete("1.0", tk.END)
+            self.add_user_message(message)
+            self.add_ai_message(
+                "Ще ні. Проєкт у процесі розвитку: базовий функціонал уже готовий, "
+                "але вдосконалення триває."
+            )
+            self.status_bar.config(text="STATUS: READY - Local response")
+            return
+        
         if not self.client:
             messagebox.showerror(
                 "Error",
